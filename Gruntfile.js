@@ -1,0 +1,59 @@
+/**
+ * All of this code was originally written for my Katina project (https://github.com/jjaburke91/katinaTheme/blob/develop_makeover/Gruntfile.js)
+ *  I've removed the commentary that was copied over, changes from original are very minor.
+ */
+
+module.exports = function(grunt) {
+
+    grunt.initConfig({
+        pkg: grunt.file.readJSON('package.json'),
+
+        wiredep: {
+            task: {
+                src: ['index.html'],
+            }
+        },
+
+        // Confirm how this is working!!
+        bower: {
+            install: {
+                options: {
+                    install: true,
+                    copy: false,
+                    targetDir: './lib',
+                    cleanTargetDir: true
+                }
+            }
+        },
+
+        // Concatenates all angular files and views
+        concat: {
+            options: {
+                separator: ';'
+            },
+            dist: {
+                src: [ 'angular/*.js', 'angular/controllers/*.js', 'angular/directives/*.js' ],
+                dest: 'dist/dist-app.js'
+            }
+        },
+
+        watch: {
+            dev: {
+                files: [ 'Gruntfile.js', 'angular/*.js', 'angular/controllers/*.js', 'angular/directives/*.js', '*.html' ],
+                tasks: [ 'concat:dist' ],
+                options: {
+                    atBegin: true
+                }
+            }
+        }
+    });
+
+    grunt.loadNpmTasks('grunt-wiredep');
+    grunt.loadNpmTasks('grunt-contrib-concat');
+    grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks('grunt-bower-task');
+
+    grunt.registerTask('dev', [ 'bower', 'watch:dev' ]);
+    grunt.registerTask('package', [ 'bower', 'concat:dist' ]);
+
+};
