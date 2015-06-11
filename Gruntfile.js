@@ -37,6 +37,14 @@ module.exports = function(grunt) {
             }
         },
 
+        less: {
+            development: {
+                files: {
+                    'dist/style.css' : 'style.less'
+                }
+            }
+        },
+
         watch: {
             dev: {
                 files: [ 'Gruntfile.js', 'angular/*.js', 'angular/controllers/*.js', 'angular/directives/*.js', '*.html' ],
@@ -51,9 +59,10 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-wiredep');
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks('grunt-contrib-less');
     grunt.loadNpmTasks('grunt-bower-task');
 
-    grunt.registerTask('dev', [ 'bower', 'watch:dev' ]);
+    grunt.registerTask('dev', [ 'bower', 'less', 'watch:dev' ]);
     grunt.registerTask('package', [ 'bower', 'concat:dist' ]);
 
 };

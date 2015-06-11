@@ -6,6 +6,6 @@ flickr_app.config( ['$routeProvider', function($routeProvider) {
             templateUrl: '/angular/views/photo-listing.html',
             controller: 'photo-listing-controller'
         })
-}])
+}]);
 ;console.log("filler");
 ;
