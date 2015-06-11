@@ -1,9 +1,18 @@
-var flickr_app = angular.module('flickr-app', ['ngRoute']);
+var flickrAppObjects = {}; // Object to contain global vars.
+flickrAppObjects.flickrBaseUrl = 'https://api.flickr.com/services/feeds/photos_public.gne?tags=potato&tagmode=all&format=json&jsoncallback=JSON_CALLBACK';
 
-flickr_app.config( ['$routeProvider', function($routeProvider) {
+var flickrApp = angular.module('flickr-app', ['ngRoute']);
+
+flickrApp.config( ['$routeProvider', function($routeProvider) {
     $routeProvider
         .when('/', {
             templateUrl: '/angular/views/photo-listing.html',
             controller: 'photo-listing-controller'
         })
+        .when('/error', {
+            templateUrl: '/angular/views/error.html'
+        })
+        .otherwise({
+            redirectTo: '/error'
+        });
 }]);

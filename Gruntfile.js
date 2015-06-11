@@ -47,8 +47,8 @@ module.exports = function(grunt) {
 
         watch: {
             dev: {
-                files: [ 'Gruntfile.js', 'angular/*.js', 'angular/controllers/*.js', 'angular/directives/*.js', '*.html' ],
-                tasks: [ 'concat:dist' ],
+                files: [ 'Gruntfile.js', 'angular/*.js', 'angular/controllers/*.js', 'angular/directives/*.js', '*.less' ],
+                tasks: [ 'concat:dist', 'less' ],
                 options: {
                     atBegin: true
                 }

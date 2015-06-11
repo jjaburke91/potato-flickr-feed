@@ -3,3 +3,7 @@ node_modules/
 
 # I would normally ignore bower_components too however left it in for ease of deployment.
 # Same goes for 'dist/' folder, would normally ignore this so commits aren't cluttered with updates to both the pre and post processed angular and style files.
+
+# Remember to commit following folders on final commit!
+bower_components/
+dist/

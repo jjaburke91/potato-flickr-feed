@@ -1,1 +1,18 @@
-<h1>filler</h1>
+<h2>{{pageTitle}}</h2>
+
+<div class="flickr-post" ng-repeat="post in feed | limitTo: 10">
+    <img class="post-thumbnail" src="{{post.media.m}}"></img>
+
+    <div class="post-information-container">
+        <h3 class="post-title">
+            <a href="photo/{{post.title}}">{{post.title}}</a>
+        </h3>
+
+        <p class="post-publishdate">
+            Published on {{post.date_taken | date:'dd MMM yyyy'}} at {{post.date_taken | date:'hh:mm'}}
+        </p>
+
+        <p><a href="http://flickr.com/{{post.author_id}}">{{post.author}}</a></p>
+        <a href="{{post.link}}">View On Flickr</a>
+    </div>
+</div>
