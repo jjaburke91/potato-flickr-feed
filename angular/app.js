@@ -7,7 +7,12 @@ flickrApp.config( ['$routeProvider', function($routeProvider) {
     $routeProvider
         .when('/', {
             templateUrl: '/angular/views/photo-listing.html',
-            controller: 'photo-listing-controller'
+            controller: 'photo-listing-controller',
+            resolve: {
+                feed: function (flickr) {
+                    return flickr.getFeed();
+                }
+            }
         })
         .when('/error', {
             templateUrl: '/angular/views/error.html'

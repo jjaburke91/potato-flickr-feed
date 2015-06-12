@@ -1,4 +1,5 @@
 <h2>{{pageTitle}}</h2>
+<button ng-click="refreshFeed()">Refresh Feed</button>
 
 <div class="flickr-post" ng-repeat="post in feed | limitTo: 10">
     <img class="post-thumbnail" src="{{post.media.m}}"></img>

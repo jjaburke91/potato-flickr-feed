@@ -1,13 +1,9 @@
-flickrApp.controller('photo-listing-controller', ['$scope', 'flickr', function($scope, flickr) {
+flickrApp.controller('photo-listing-controller', ['$scope', 'flickr', 'feed', function($scope, flickr, feed) {
     $scope.pageTitle = "Photo Listing";
+    $scope.feed = feed;
 
-    flickr.getFeed()
-        .success( function(response) {
-            $scope.feed = response.items;
-            console.info($scope.feed);
-        })
-        .error( function() {
-            console.error("photo-listing-controller: Error retrieving feed.");
-        });
+    $scope.refreshFeed = function() {
+        $scope.feed = flickr.getAndRefreshFeed();
+    };
 
 }]);
