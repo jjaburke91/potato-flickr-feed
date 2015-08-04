@@ -1,9 +1,10 @@
-flickrApp.controller('photo-listing-controller', ['$scope', 'flickr', 'feed', function($scope, flickr, feed) {
+flickrApp.controller('photo-listing-controller', ['$scope', '$state', 'flickr', 'feed', function($scope, $state, flickr, feed) {
     $scope.pageTitle = "Photo Listing";
     $scope.feed = feed;
 
-    $scope.refreshFeed = function() {
-        $scope.feed = flickr.getAndRefreshFeed();
-    };
+    $scope.viewImage = function(photoObject) {
+        flickr.setSelectedPhoto(photoObject);
+        $state.go("flickr.photo");
+    }
 
 }]);

@@ -17,11 +17,13 @@
   "dependencies": {
     "angular": "~1.4.0",
     "angular-route": "~1.4.0",
-    "jquery": "~2.1.4"
+    "jquery": "~2.1.4",
+    "ui-router": "~0.2.15"
   },
   "devDependencies": {
     "angular-route": "~1.4.0",
     "angular": "~1.4.0",
-    "jquery": "~2.1.4"
+    "jquery": "~2.1.4",
+    "ui-router": "~0.2.15"
   }
 }

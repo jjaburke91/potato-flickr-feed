@@ -1,0 +1,20 @@
+
+<button ui-sref="flickr.listing">Back to listing</button>
+
+<div class="post-information-container">
+    <h3 class="post-title">
+        <a href="{{photoData.link}}">{{photoData.title }}</a>
+    </h3>
+
+    <p class="post-publishdate">
+        Published on {{photoData.date_taken | date:'dd MMM yyyy'}} at {{photoData.date_taken | date:'hh:mm'}}
+    </p>
+
+    <p><a href="http://flickr.com/{{photoData.author_id}}">{{photoData.author}}</a></p>
+</div>
+
+<img class="post-thumbnail" src="{{photoData.media.m}}">
+
+<p style="border:red 1px solid" ng-bind-html="photoData.description | trustAsHtml"></p>
+
+<p>{{photoData.tags}}</p>

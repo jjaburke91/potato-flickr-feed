@@ -1,12 +1,11 @@
 <h2>{{pageTitle}}</h2>
-<button ng-click="refreshFeed()">Refresh Feed</button>
 
 <div class="flickr-post" ng-repeat="post in feed | limitTo: 10">
-    <img class="post-thumbnail" src="{{post.media.m}}"></img>
+    <img class="post-thumbnail" src="{{post.media.m}}">
 
     <div class="post-information-container">
         <h3 class="post-title">
-            <a href="photo/{{post.title}}">{{post.title}}</a>
+            <a href="" ng-click="viewImage(post)" >{{post.title }}</a>
         </h3>
 
         <p class="post-publishdate">
