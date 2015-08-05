@@ -1,9 +1,157 @@
 html {
-    font-family: 'Vollkorn', sans-serif;
+  font-family: 'Vollkorn', sans-serif;
 }
 
+/** Listing Page **/
+
 .flickr-post {
+  display: block;
+  border: 1px solid grey;
+
+  padding: 3px;
+  margin: 5px 5px;
+
+  overflow: auto;
+
+  .post-thumbnail-container {
+    float: left;
+    width: 9em;
+
+    img {
+      height: 100%;
+      width: 100%;
+      display: block;
+    }
+  }
+
+  .post-title {
+    font-size: 1.5em;
+    margin: 0;
+  }
+
+  .post-information-container {
     display: block;
-    width: 100%;
-    border: 1px solid grey;
+    border: 1px solid red;
+    padding: 3px;
+
+    vertical-align: top;
+    overflow: auto;
+    font-size: .9em;
+
+    .post-author {
+    }
+
+    .post-publishdate {
+    }
+
+    .post-flickr-link {
+    }
+  }
+
+
+  @media (min-width: 800px ) {
+    .post-information-container {
+      .post-author {
+      }
+
+      .post-publishdate {
+      }
+
+      .post-flickr-link {
+      }
+    }
+  }
+
+  @media (max-width: 800px) {
+    .post-information-container {
+      border: 1px solid greenyellow;
+
+      .post-author {
+      }
+
+      .post-publishdate {
+      }
+
+      .post-flickr-link {
+      }
+    }
+
+  }
+}
+
+
+/** Photo Page **/
+
+@date-author-spacing: 2em;
+
+#photo-page-container {
+  border: 1px solid grey;
+  padding: 3px;
+  margin: 5px 5px;
+
+  #photo-page-meta-container {
+    display: block;
+    position: relative;
+    width: auto;
+    padding: 3px;
+    margin: 5px 2px;
+
+    border: 1px solid red;
+
+    #back-btn {
+      position: absolute;
+      top: 0;
+      right: 0;
+      margin: 3px;
+      font-size: 1.2em;
+    }
+
+    #photo-page-title {
+      font-size: 2em;
+      margin: 0;
+      padding: 0;
+    }
+
+    #photo-page-publishdate {
+      display: inline-block;
+      border-left: 3px solid grey;
+      padding-left: @date-author-spacing;
+    }
+
+    #photo-page-author {
+      display: inline-block;
+      padding-right: @date-author-spacing;
+    }
+  }
+
+  #photo-page-image-container {
+    float: left;
+    width: 25em;
+
+    img {
+      display: block;
+      height: 100%;
+      width: 100%;
+    }
+  }
+
+  #photo-page-information-container {
+    width: auto;
+    overflow: auto;
+
+    padding: 2px 5px;
+    margin: 0;
+
+    border: 1px solid blue;
+
+    #photo-page-description {
+      padding: 0;
+      margin: 0;
+    }
+
+    #photo-page-tags {
+    }
+
+  }
+
 }

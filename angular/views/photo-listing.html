@@ -1,18 +1,24 @@
-<h2>{{pageTitle}}</h2>
-
 <div class="flickr-post" ng-repeat="post in feed | limitTo: 10">
-    <img class="post-thumbnail" src="{{post.media.m}}">
+
+    <div class="post-thumbnail-container">
+        <img class="post-thumbnail" src="{{post.media.m}}">
+    </div>
+
+    <h3 class="post-title">
+        <a href="" ng-click="viewImage(post)" >{{post.title }}</a>
+    </h3>
 
     <div class="post-information-container">
-        <h3 class="post-title">
-            <a href="" ng-click="viewImage(post)" >{{post.title }}</a>
-        </h3>
+        <p class="post-author">
+            <a href="http://flickr.com/{{post.author_id}}">{{post.author}}</a>
+        </p>
 
         <p class="post-publishdate">
             Published on {{post.date_taken | date:'dd MMM yyyy'}} at {{post.date_taken | date:'hh:mm'}}
         </p>
 
-        <p><a href="http://flickr.com/{{post.author_id}}">{{post.author}}</a></p>
-        <a href="{{post.link}}">View On Flickr</a>
+        <a class="post-flickr-link" ref="{{post.link}}">View On Flickr</a>
+
     </div>
+
 </div>

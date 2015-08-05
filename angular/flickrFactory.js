@@ -13,7 +13,7 @@ flickrApp.service('flickr', ['$http', function($http) {
                 console.error("flickr: Error retrieving flickr feed.");
             }
         );
-    };
+    };  
 
     return {
         getFeed : function() {
