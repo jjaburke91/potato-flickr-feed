@@ -3,11 +3,7 @@ flickrAppObjects.flickrBaseUrl = 'https://api.flickr.com/services/feeds/photos_p
 
 var flickrApp = angular.module('flickr-app', ['ui.router']);
 
-flickrApp.filter('trustAsHtml', function($sce){
-    return function(input){
-        return $sce.trustAsHtml(input);
-    }
-});
+
 
 flickrApp.config( ['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
     $urlRouterProvider.when("", "/flickr/listing");

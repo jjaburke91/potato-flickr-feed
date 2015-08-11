@@ -34,8 +34,8 @@ html {
 
   .post-information-container {
     display: block;
-    border: 1px solid red;
-    padding: 3px;
+//    border: 1px solid red;
+    padding: 3px 1em;
 
     vertical-align: top;
     overflow: auto;
@@ -89,17 +89,17 @@ html {
 
 #photo-page-container {
   border: 1px solid grey;
-  padding: 3px;
+  padding: 1em;
   margin: 5px 5px;
+  overflow: auto;
 
   #photo-page-meta-container {
     display: block;
     position: relative;
     width: auto;
+
     padding: 3px;
     margin: 5px 2px;
-
-    border: 1px solid red;
 
     #back-btn {
       position: absolute;
@@ -113,6 +113,7 @@ html {
       font-size: 2em;
       margin: 0;
       padding: 0;
+
     }
 
     #photo-page-publishdate {
@@ -129,7 +130,8 @@ html {
 
   #photo-page-image-container {
     float: left;
-    width: 25em;
+    width: 20em;
+    padding-right: 1em;
 
     img {
       display: block;
@@ -145,14 +147,16 @@ html {
     padding: 2px 5px;
     margin: 0;
 
-    border: 1px solid blue;
-
     #photo-page-description {
       padding: 0;
       margin: 0;
     }
 
     #photo-page-tags {
+      a {
+        padding: 0 0.1em;
+      }
+
     }
 
   }
