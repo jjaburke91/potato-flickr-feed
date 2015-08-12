@@ -4,14 +4,15 @@ flickrApp.directive('photoTags', function() {
         scope: {
             tags: '=tags'
         },
-        templateUrl: 'angular/directives/views/photo-tags.html',
+        templateUrl: 'angular/directives/photo-tags/photo-tags.html',
         controller: 'photo-tags-controller'
     }
 });
 
 flickrApp.controller('photo-tags-controller', ['$scope',  function($scope) {
 
-    /* Error handling on no tags input */
+    if ($scope.tags != undefined) {
+        $scope.tagArray = $scope.tags.split(" ");
+    }
 
-    $scope.tagArray = $scope.tags.split(" ");
 }]);

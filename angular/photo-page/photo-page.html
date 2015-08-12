@@ -3,13 +3,13 @@
 
     <div id="photo-page-meta-container">
         <h3 id="photo-page-title">
-            <a href="{{photoData.link}}">{{photoData.title }}</a>
+            <a target="_blank" href="{{photoData.link}}">{{photoData.title }}</a>
         </h3>
 
         <button id="back-btn" ui-sref="flickr.listing">Back</button>
 
         <p id="photo-page-author">
-            <a href="http://flickr.com/{{photoData.author_id}}">{{photoData.author}}</a>
+            <a target="_blank" href="http://flickr.com/{{photoData.author_id}}">{{photoData.author}}</a>
         </p>
 
         <p id="photo-page-publishdate">

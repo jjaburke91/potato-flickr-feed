@@ -10,11 +10,10 @@ module.exports = function(grunt) {
 
         wiredep: {
             task: {
-                src: ['index.html'],
+                src: ['index.html']
             }
         },
 
-        // Confirm how this is working!!
         bower: {
             install: {
                 options: {
@@ -32,7 +31,7 @@ module.exports = function(grunt) {
                 separator: ';'
             },
             dist: {
-                src: [ 'angular/*.js', 'angular/controllers/*.js', 'angular/directives/*.js' ],
+                src: [ 'angular/*.js', 'angular/**/*.js' ],
                 dest: 'dist/dist-app.js'
             }
         },
@@ -47,7 +46,7 @@ module.exports = function(grunt) {
 
         watch: {
             dev: {
-                files: [ 'Gruntfile.js', 'angular/*.js', 'angular/controllers/*.js', 'angular/directives/*.js', '*.less' ],
+                files: [ 'Gruntfile.js', 'angular/*.js', 'angular/**/*.js', '*.less' ],
                 tasks: [ 'concat:dist', 'less' ],
                 options: {
                     atBegin: true

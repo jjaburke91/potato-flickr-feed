@@ -9,8 +9,7 @@ flickrApp.config( ['$stateProvider', '$urlRouterProvider', function($stateProvid
     $urlRouterProvider.when("", "/flickr/listing");
     $urlRouterProvider.when("/", "/flickr/listing");
     $urlRouterProvider.when("/flickr", "/flickr/listing");
-    //$urlRouterProvider.when("/error", { templateUrl: '/angular/views/error.html' });
-    //$urlRouterProvider.otherwise( { redirectTo: "/error"});
+    // Better way to catch bad URLs?
 
     $stateProvider
         .state('flickr', {
@@ -25,24 +24,13 @@ flickrApp.config( ['$stateProvider', '$urlRouterProvider', function($stateProvid
         })
         .state('flickr.listing', {
             url: "/listing",
-            templateUrl: "/angular/views/photo-listing.html",
+            templateUrl: "/angular/photo-listing/photo-listing.html",
             controller: "photo-listing-controller"
         })
         .state('flickr.photo', {
             url: "/photo-viewer",
-            templateUrl: "/angular/views/photo-page.html",
+            templateUrl: "/angular/photo-page/photo-page.html",
             controller: "photo-page-controller"
         });
 
 }]);
-
-
-/** TODOs:
-
- * Safe URL routing (if we're routing on URL at all)
- * Restructure Angular files
- * Make the routerProvider catchers safer and less explicit
- * Initialise flickr feed in well defined map? Means IDs can be used...
- * Create Directive for photo listing
- *
-**/
