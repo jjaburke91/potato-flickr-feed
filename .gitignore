@@ -7,3 +7,4 @@ node_modules/
 # Remember to commit following folders on final commit!
 bower_components/
 dist/
+.idea/

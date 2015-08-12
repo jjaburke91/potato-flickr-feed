@@ -2,6 +2,7 @@
 
 
 To-Do:
+* Responsive re-structure of photo-listing meta data.
 * Cross-browser test.
 * Tidy Angular file structure.
 * Add explanatory comments.
