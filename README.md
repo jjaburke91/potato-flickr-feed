@@ -5,6 +5,10 @@ To-Do:
 * ~~app.js: Make the routerProvider catchers safer and less explicit.~~
 * ~~Create directive for photo-listing.~~
 * Cross-browser test.
+** ~~Firefox~~
+** ~~Chrome~~
+** IE
+** Safari
 * ~~Tidy Angular file structure.~~
 * Add explanatory comments.
 * Remove unnecessary commenting.
@@ -13,7 +17,6 @@ To-Do:
 Extra Tasks:
 * Define build process.
 * Consider defining how to implement "Load More" functionality.
-
 
 Comments to make:
 * Why CSS over JS on responsive information restructure.

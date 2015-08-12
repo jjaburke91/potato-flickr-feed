@@ -1,8 +1,7 @@
-var flickrAppObjects = {}; // Object to contain global vars.
+var flickrAppObjects = {}; // Object to contain global vars. In a larger project, a service or factory could be used to provide global vars within Angular.
 flickrAppObjects.flickrBaseUrl = 'https://api.flickr.com/services/feeds/photos_public.gne?tags=potato&tagmode=all&format=json&jsoncallback=JSON_CALLBACK';
 
 var flickrApp = angular.module('flickr-app', ['ui.router']);
-
 
 
 flickrApp.config( ['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
