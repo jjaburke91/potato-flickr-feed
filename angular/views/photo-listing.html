@@ -9,15 +9,19 @@
             <a href="" ng-click="viewImage(post)" >{{post.title }}</a>
         </h3>
 
-        <p class="post-author">
-            <a href="http://flickr.com/{{post.author_id}}">{{post.author}}</a>
-        </p>
-
-        <p class="post-publishdate">
+        <p class="post-publishdate post-information-content smallscreen">
             Published on {{post.date_taken | date:'dd MMM yyyy'}} at {{post.date_taken | date:'hh:mm'}}
         </p>
 
-        <a class="post-flickr-link" ref="{{post.link}}">View On Flickr</a>
+        <p class="post-author post-information-content">
+            <a href="http://flickr.com/{{post.author_id}}">{{post.author}}</a>
+        </p>
+
+        <p class="post-publishdate post-information-content largescreen">
+            Published on {{post.date_taken | date:'dd MMM yyyy'}} at {{post.date_taken | date:'hh:mm'}}
+        </p>
+
+        <a class="post-flickr-link post-information-content" ref="{{post.link}}">View On Flickr</a>
 
     </div>
 

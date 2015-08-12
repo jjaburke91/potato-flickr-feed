@@ -1,11 +1,9 @@
 # potato-flickr-feed
 
-
 To-Do:
-* Responsive re-structure of photo-listing meta data.
-* app.js: Make the routerProvider catchers safer and less explicit
+* ~~Responsive re-structure of photo-listing meta data.~~
+* app.js: Make the routerProvider catchers safer and less explicit.
 * Create directive for photo-listing.
-
 * Cross-browser test.
 * Tidy Angular file structure.
 * Add explanatory comments.
