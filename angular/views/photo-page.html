@@ -22,7 +22,7 @@
     </div>
 
     <div id="photo-page-information-container">
-        <p ng-bind-html="photoData.description | stripRedundantContent | trustAsHtml "></p>
+        <p ng-bind-html="photoData.description | removeHtmlElementsByIndex:'<p>':2 | trustAsHtml "></p>
 
         <photo-tags tags="photoData.tags"></photo-tags>
     </div>

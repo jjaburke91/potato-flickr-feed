@@ -4,19 +4,40 @@ flickrApp.filter('trustAsHtml', function($sce){
     }
 });
 
-flickrApp.filter('stripRedundantContent', function() {
-    // Following filter returns the index of the end of the second <p> tag in the input.
-    // This is used to workaround the flickr description including author name and image. See end of file for indented sample content.
-    return function(input) {
-        var searchString = "</p>";
-        var secondPTagClose = input.indexOf(searchString, input.indexOf(searchString)+searchString.length );
-        return input.slice(secondPTagClose);
+flickrApp.filter('removeHtmlElementsByIndex', function() {
+    /**
+     * This is used to workaround the flickr description including author name and image. See end of file for indented sample content.
+     * Made conditions flexible for sake and example of re-usability.
+     **
+     * input = text input to be have DOM elements removed from.
+     * htmlElement = HTML tag to be checked for and have preceding text removed e.g. <p>, <div>, <ul>, <li>...
+     * numberToRemove = number of occurrences of -htmlElement- to strip from.
+     *
+     */
+    return function(input, htmlElement, numberToRemove) {
+
+        // Changing htmlElement to the closing tag of the given element
+        htmlElement = htmlElement.slice( 0, htmlElement.indexOf('<')+1)
+                        + "/"
+                        + htmlElement.slice(htmlElement.indexOf('<')+1, htmlElement.length);
+
+        var htmlElementIndex = 0;
+
+        for (var elementCounter = 0 ; elementCounter < numberToRemove && htmlElementIndex != -1; elementCounter++ ) {
+            htmlElementIndex = input.indexOf(htmlElement);
+            if (htmlElementIndex != -1) {
+                input = input.slice(htmlElementIndex + htmlElement.length);
+            }
+        }
+
+        return input;
     }
 });
 
 
 
 /* Sample description from flickr photo:
+
  <p>
      <a href="https://www.flickr.com/people/127275457@N05/">losespejoscocinagourmet
      </a>
@@ -34,4 +55,5 @@ flickrApp.filter('stripRedundantContent', function() {
      Tocino.
      <br/> #LosEspejos pedidos 83367064
  </p>
+
  */
