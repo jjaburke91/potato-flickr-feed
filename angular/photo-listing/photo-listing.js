@@ -1,10 +1,3 @@
-flickrApp.controller('photo-listing-controller', ['$scope', '$state', 'flickr', 'feed', function($scope, $state, flickr, feed) {
-    $scope.pageTitle = "Photo Listing";
+flickrApp.controller('photo-listing-controller', ['$scope', 'feed', function($scope, feed) {
     $scope.feed = feed;
-
-    $scope.viewImage = function(photoObject) {
-        flickr.setSelectedPhoto(photoObject);
-        $state.go("flickr.photo");
-    }
-
 }]);

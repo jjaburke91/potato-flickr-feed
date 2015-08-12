@@ -6,26 +6,24 @@ var flickrApp = angular.module('flickr-app', ['ui.router']);
 
 
 flickrApp.config( ['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
-    $urlRouterProvider.when("", "/flickr/listing");
     $urlRouterProvider.when("/", "/flickr/listing");
-    $urlRouterProvider.when("/flickr", "/flickr/listing");
-    // Better way to catch bad URLs?
+    $urlRouterProvider.otherwise("/"); // '/listing' is the only loadable route.
 
     $stateProvider
         .state('flickr', {
             abstract: true,
             url: "/flickr",
-            templateUrl: '/angular/flickr.html',
+            templateUrl: '/angular/flickr.html'
+        })
+        .state('flickr.listing', {
+            url: "/listing",
+            templateUrl: "/angular/photo-listing/photo-listing.html",
+            controller: "photo-listing-controller",
             resolve: {
                 feed: function (flickr) {
                     return flickr.getFeed();
                 }
             }
-        })
-        .state('flickr.listing', {
-            url: "/listing",
-            templateUrl: "/angular/photo-listing/photo-listing.html",
-            controller: "photo-listing-controller"
         })
         .state('flickr.photo', {
             url: "/photo-viewer",
