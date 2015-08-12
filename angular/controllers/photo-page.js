@@ -5,7 +5,6 @@ flickrApp.controller('photo-page-controller', ['$scope', '$state', 'flickr', fun
         $state.go("flickr.listing");
     } else {
         $scope.photoData.tagArray = $scope.photoData.tags.split(" ");
-        console.log($scope.photoData.tagArray);
     }
 
 }]);
