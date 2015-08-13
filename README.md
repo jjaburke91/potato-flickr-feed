@@ -16,7 +16,7 @@ node node-app.js
 ```
 This should build and run all the necessary dependencies. Happy to give an explanation as to what's going on in the grunt tasks if you wish. I frequently re-use tasks *wiredep* and *concat*, both save me a lot of time messing about with imports and / or concatenating files.
 
-Branch "*prod_build*" contains all the files required to execute the application if you don't wish to go through the build processes.
+Branch "*dependency_inclusion*" contains all the files required to execute the application if you don't wish to go through the build processes.
 
 ## Comments
 ### Using CSS Over JS For Listing Page Photo Information
