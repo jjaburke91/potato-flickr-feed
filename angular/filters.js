@@ -1,3 +1,6 @@
+/**
+ * Allows HTML data to be used within views.
+ */
 flickrApp.filter('trustAsHtml', function($sce){
     return function(input){
         return $sce.trustAsHtml(input);
@@ -6,13 +9,14 @@ flickrApp.filter('trustAsHtml', function($sce){
 
 flickrApp.filter('removeHtmlElementsByIndex', function() {
     /**
-     * This is used to workaround the flickr description including author name and image. See end of file for indented sample content.
+     * Filter will search until the end of the nth occurrence of an HTML tag, and remove all preceding content.
+     *
+     * This is used to workaround the flickr description including author name and image. See end of file for sample content.
      * Made conditions flexible for sake and example of re-usability.
      **
      * input = text input to be have DOM elements removed from.
-     * htmlElement = HTML tag to be checked for and have preceding text removed e.g. <p>, <div>, <ul>, <li>...
+     * htmlElement = HTML tag to be checked for and have preceding text removed e.g. '<p>', '<div>', '<ul>', '<li>'...
      * numberToRemove = number of occurrences of -htmlElement- to strip from.
-     *
      */
     return function(input, htmlElement, numberToRemove) {
 

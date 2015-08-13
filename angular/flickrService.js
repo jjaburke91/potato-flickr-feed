@@ -18,7 +18,6 @@ flickrApp.service('flickr', ['$http', function($http) {
     return {
         getFeed : function() {
             if (flickrFeed === null) {
-                console.info("flickr: Retrieving fresh feed.");
                 flickrFeed = requestFlickrFeed();
                 return flickrFeed;
             } else {

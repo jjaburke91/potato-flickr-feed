@@ -6,7 +6,7 @@ var flickrApp = angular.module('flickr-app', ['ui.router']);
 
 flickrApp.config( ['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
     $urlRouterProvider.when("/", "/flickr/listing");
-    $urlRouterProvider.otherwise("/"); // '/listing' is the only loadable route.
+    $urlRouterProvider.otherwise("/flickr/listing");
 
     $stateProvider
         .state('flickr', {
