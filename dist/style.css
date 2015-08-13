@@ -1,0 +1,114 @@
+html {
+  font-family: 'Vollkorn', sans-serif;
+}
+/** Listing Page **/
+.flickr-post {
+  display: block;
+  border: 1px solid grey;
+  min-width: 650px;
+  padding: 3px;
+  margin: 5px 5px;
+  overflow: auto;
+}
+.flickr-post .post-thumbnail-container {
+  float: left;
+  width: 9em;
+  cursor: pointer;
+}
+.flickr-post .post-thumbnail-container img {
+  width: 100%;
+  display: block;
+}
+.flickr-post .post-title {
+  font-size: 1.5em;
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.flickr-post .post-information-container {
+  display: block;
+  padding: 3px 1em;
+  vertical-align: top;
+  overflow: auto;
+  font-size: .9em;
+}
+.flickr-post .post-information-container .post-information-content {
+  display: inline-block;
+  padding-right: 10px;
+  margin: 5px 0 0 0 ;
+}
+@media (min-width: 800px) {
+  .flickr-post .post-information-container .post-publishdate.smallscreen {
+    display: none;
+  }
+  .flickr-post .post-information-container .post-publishdate.largescreen {
+    display: inline-block;
+  }
+}
+@media (max-width: 800px) {
+  .flickr-post .post-information-container .post-publishdate.smallscreen {
+    display: block;
+  }
+  .flickr-post .post-information-container .post-publishdate.largescreen {
+    display: none;
+  }
+}
+/** Photo Page **/
+#photo-page-container {
+  border: 1px solid grey;
+  padding: 1em;
+  margin: 5px 5px;
+  min-width: 650px;
+  overflow: auto;
+}
+#photo-page-container #photo-page-meta-container {
+  display: block;
+  position: relative;
+  width: auto;
+  padding: 3px;
+  margin: 5px 2px;
+}
+#photo-page-container #photo-page-meta-container #back-btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 3px;
+  font-size: 1.2em;
+}
+#photo-page-container #photo-page-meta-container #photo-page-title {
+  font-size: 2em;
+  margin: 0 2em 0 0;
+  padding: 0;
+}
+#photo-page-container #photo-page-meta-container #photo-page-publishdate {
+  display: inline-block;
+  border-left: 3px solid grey;
+  padding-left: 1em;
+}
+#photo-page-container #photo-page-meta-container #photo-page-author {
+  display: inline-block;
+  padding-right: 1em;
+}
+#photo-page-container #photo-page-image-container {
+  float: left;
+  width: 20em;
+  padding-right: 1em;
+}
+#photo-page-container #photo-page-image-container img {
+  display: block;
+  width: 100%;
+}
+#photo-page-container #photo-page-information-container {
+  width: auto;
+  overflow: auto;
+  padding: 2px 5px;
+  margin: 0;
+}
+#photo-page-container #photo-page-information-container #photo-page-description {
+  padding: 0;
+  margin: 0;
+}
+#photo-page-container #photo-page-information-container #photo-page-tags a {
+  padding: 0 0.1em;
+}
