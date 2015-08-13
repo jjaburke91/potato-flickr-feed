@@ -1,6 +1,6 @@
 # potato-flickr-feed
 
-Here contains my solution to the flickr-feed task. I hope this display my skill in Angular, HTML, CSS and general ability to construct and understand web applications.
+This repo contains my solution to the flickr-feed task. I hope this displays my skill in Angular, HTML, CSS and general ability to construct and understand web applications.
 
 ## Build
 The project was built in an environment using Bower, NPM, Grunt, LESS and Node JS.
@@ -20,9 +20,9 @@ Branch "*prod_build*" contains all the files required to execute the application
 
 ## Comments
 ### Using CSS Over JS For Listing Page Photo Information
-I generally prefer to use CSS for any stylistic changes when possible and so chose to duplicate DOM and use media queries to display the Author, Date and View link on the listing page. I like having all style and structural code to be in one place.
+I generally prefer to use CSS for any stylistic changes when possible and so chose to duplicate DOM and use media queries to display the Author, Date and View link on the listing page. I like having all style and structural-behaviour code to be in one place.
 
-Duplicating DOM is the disadvantage to this method, however given the duplicate DOM was only containing text, I find the disadvantage to be acceptable. If, however, the duplicate DOM was required to have an image of some sort, I would have used Javascript to restructure the DOM and so as not to duplicate an image request.
+Duplicating DOM is the disadvantage to this method, however given the duplicate DOM is only containing text, I find the disadvantage to be acceptable. If, however, the duplicate DOM was required to have an image of some sort, I would have used Javascript to restructure the DOM and so as not to duplicate an image request.
 
 
 ### RemoveHTMLElementsByIndex Filter
